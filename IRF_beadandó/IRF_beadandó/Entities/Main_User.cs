@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IRF_beadandó.Entities
 {
-    class Main_User
+    public class Main_User
     {
         public string nev { get; set; }
 

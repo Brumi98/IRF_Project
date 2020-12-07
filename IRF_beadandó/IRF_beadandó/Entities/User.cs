@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace IRF_beadandó.Entities
 {
-    class User
+    public class User
     {
+        public Guid ID { get; set; }
+
         public string nev { get; set; }
 
         public string jelszo { get; set; }

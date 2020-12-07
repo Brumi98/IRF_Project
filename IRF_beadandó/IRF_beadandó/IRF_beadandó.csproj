@@ -72,25 +72,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstractions\AccountManager.cs" />
     <Compile Include="Entities\Candite.cs" />
     <Compile Include="Entities\Main_User.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Form_Main.cs">
+    <Compile Include="Forms\Form_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Main.Designer.cs">
+    <Compile Include="Forms\Form_Main.Designer.cs">
       <DependentUpon>Form_Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Login.cs">
+    <Compile Include="Forms\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Login.Designer.cs">
+    <Compile Include="Forms\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_User.cs">
+    <Compile Include="Forms\Form_User.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_User.Designer.cs">
+    <Compile Include="Forms\Form_User.Designer.cs">
       <DependentUpon>Form_User.cs</DependentUpon>
     </Compile>
     <Compile Include="Model.Context.cs">
@@ -110,13 +111,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_Main.resx">
+    <Compile Include="Services\UserManager.cs" />
+    <EmbeddedResource Include="Forms\Form_Main.resx">
       <DependentUpon>Form_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Login.resx">
+    <EmbeddedResource Include="Forms\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_User.resx">
+    <EmbeddedResource Include="Forms\Form_User.resx">
       <DependentUpon>Form_User.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IRF_beadandó.Entities
 {
-    class Candite
+    public class Candite
     {
         public string nev { get; set; }
 
