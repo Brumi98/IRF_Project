@@ -1,7 +1,7 @@
 ﻿
 namespace IRF_beadandó
 {
-    partial class Form1
+    partial class Form_Main
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@ namespace IRF_beadandó
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1223, 621);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Form_Main";
+            this.Text = "Főoldal";
             this.ResumeLayout(false);
 
         }

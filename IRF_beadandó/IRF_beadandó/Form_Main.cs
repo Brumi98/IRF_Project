@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace IRF_beadandó
 {
-    public partial class Form1 : Form
+    public partial class Form_Main : Form
     {
         Random rnd = new Random();
 
-        public Form1()
+        public Form_Main()
         {
             InitializeComponent();
         }
