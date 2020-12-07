@@ -11,7 +11,5 @@ namespace IRF_beadandó.Entities
         public string nev { get; set; }
 
         public string jelszo { get; set; }
-
-
     }
 }
