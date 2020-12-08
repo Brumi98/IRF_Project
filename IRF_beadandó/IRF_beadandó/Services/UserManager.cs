@@ -10,14 +10,14 @@ using IRF_beadandó.Entities;
 
 namespace IRF_beadandó.Services
 {
-    class UserManager : AccountManager
+    public class UserManager : AccountManager
     {
         public BindingList<User> Users { get; } = new BindingList<User>();
 
-        //public User CreateAccount(User user)
-        //{
+        public User CreateAccount(User user)
+        {
 
-        //}
+        }
 
 
     }
