@@ -13,10 +13,10 @@ namespace IRF_beadandó
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DatabaseEntities : DbContext
+    public partial class DatabaseEntities1 : DbContext
     {
-        public DatabaseEntities()
-            : base("name=DatabaseEntities")
+        public DatabaseEntities1()
+            : base("name=DatabaseEntities1")
         {
         }
     
@@ -25,5 +25,7 @@ namespace IRF_beadandó
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Candite> Candites { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
