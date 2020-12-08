@@ -16,5 +16,12 @@ namespace IRF_beadandó
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form_Main fm = new Form_Main();
+
+            DialogResult result = fm.ShowDialog();
+        }
     }
 }

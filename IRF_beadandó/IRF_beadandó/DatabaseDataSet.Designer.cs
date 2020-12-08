@@ -763,6 +763,7 @@ namespace IRF_beadandó {
                 base.Columns.Add(this.columnVoks);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrementSeed = 1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnFelhasználó.AllowDBNull = false;

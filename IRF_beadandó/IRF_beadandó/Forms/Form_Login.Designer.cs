@@ -44,6 +44,7 @@ namespace IRF_beadandó
             this.button1.TabIndex = 0;
             this.button1.Text = "Belépés";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtUsername
             // 

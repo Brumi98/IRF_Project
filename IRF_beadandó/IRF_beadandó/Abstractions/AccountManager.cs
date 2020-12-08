@@ -10,7 +10,7 @@ namespace IRF_beadandó.Abstractions
 {
     public interface AccountManager
     {
-        BindingList<User> Users { get; se}
+        BindingList<User> Users { get; }
 
         User CreateUser(User user);
     }
