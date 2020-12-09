@@ -16,10 +16,10 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Felhasználó" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Jelszó" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Voks" Type="int" />
+          <Property Name="JelöltekFK" Type="int" />
         </EntityType>
         <Association Name="FK_Users_ToCandites">
           <End Role="Candites" Type="Self.Candites" Multiplicity="0..1" />
@@ -29,7 +29,7 @@
               <PropertyRef Name="Candites_ID" />
             </Principal>
             <Dependent Role="Users">
-              <PropertyRef Name="Voks" />
+              <PropertyRef Name="JelöltekFK" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -58,10 +58,10 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Felhasználó" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Jelszó" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Voks" Type="Int32" />
+          <Property Name="JelöltekFK" Type="Int32" />
           <NavigationProperty Name="Candite" Relationship="Self.FK_Users_ToCandites" FromRole="Users" ToRole="Candites" />
         </EntityType>
         <Association Name="FK_Users_ToCandites">
@@ -72,11 +72,11 @@
               <PropertyRef Name="Candites_ID" />
             </Principal>
             <Dependent Role="Users">
-              <PropertyRef Name="Voks" />
+              <PropertyRef Name="JelöltekFK" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DatabaseEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DatabaseEntities_1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Candites" EntityType="Self.Candite" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <AssociationSet Name="FK_Users_ToCandites" Association="Self.FK_Users_ToCandites">
@@ -89,7 +89,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities1">
+        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities_1">
           <EntitySetMapping Name="Candites">
             <EntityTypeMapping TypeName="DatabaseModel.Candite">
               <MappingFragment StoreEntitySet="Candites">
@@ -104,7 +104,7 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Felhasználó" ColumnName="Felhasználó" />
                 <ScalarProperty Name="Jelszó" ColumnName="Jelszó" />
-                <ScalarProperty Name="Voks" ColumnName="Voks" />
+                <ScalarProperty Name="JelöltekFK" ColumnName="JelöltekFK" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -14,33 +14,18 @@ namespace IRF_beadandó
     public partial class Form_Main : Form
     {
         Random rnd = new Random();
-        DatabaseEntities1 context = new DatabaseEntities1();
-
+        DatabaseEntities_1 context = new DatabaseEntities_1();
 
         public Form_Main()
         {
             InitializeComponent();
 
             context.Users.Load();
+            context.Candites.Load();
 
-            usersBindingSource.DataSource = context.Users.Local;
+            userBindingSource.DataSource = context.Users.Local;
+            canditeBindingSource.DataSource = context.Candites.Local;
 
-        }
-
-        private void usersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.usersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.databaseDataSet);
-
-        }
-
-        private void Form_Main_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'databaseDataSet.Candites' table. You can move, or remove it, as needed.
-            this.canditesTableAdapter.Fill(this.databaseDataSet.Candites);
-
-            this.usersTableAdapter.Fill(this.databaseDataSet.Users);
 
         }
 
@@ -48,12 +33,12 @@ namespace IRF_beadandó
         {
             User user = new User();
 
-            user.Felhasználó = felhasználóTextBox.Text;
-            user.Jelszó = jelszóTextBox.Text;
+            user.Felhasználó = txtFelhasználó.Text;
+            user.Jelszó = txtJelszo.Text;
+            //user.JelöltekFK = Convert.ToInt32(cmbJelolt.SelectedItem);
 
-            usersBindingSource.Add(user);
-
-            usersBindingSource.EndEdit();
+            userBindingSource.Add(user);
+            userBindingSource.EndEdit();
 
             try
             {
@@ -64,7 +49,10 @@ namespace IRF_beadandó
 
                 MessageBox.Show(ex.Message);
             }
-            usersDataGridView.Refresh();
+
+            userDataGridView.Refresh();
+
         }
+
     }
 }

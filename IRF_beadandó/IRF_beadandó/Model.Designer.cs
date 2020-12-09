@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\User\source\repos\IRF_Project3\IRF_beadandó\IRF_beadandó\Model01.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\User\source\repos\IRF_Project3\IRF_beadandó\IRF_beadandó\Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -17,7 +17,7 @@ namespace IRF_beadandó
         public int Id { get; set; }
         public string Felhasználó { get; set; }
         public string Jelszó { get; set; }
-        public Nullable<int> Voks { get; set; }
+        public Nullable<int> JelöltekFK { get; set; }
     
         public virtual Candite Candite { get; set; }
     }
