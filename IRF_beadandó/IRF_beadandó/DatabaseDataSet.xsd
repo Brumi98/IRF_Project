@@ -123,10 +123,10 @@ SELECT Id, Felhasználó, Jelszó, Voks FROM Users WHERE (Id = @Id)</CommandText
   <xs:element name="DatabaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DatabaseDataSet" msprop:Generator_UserDSName="DatabaseDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Candites" msprop:Generator_TableClassName="CanditesDataTable" msprop:Generator_TableVarName="tableCandites" msprop:Generator_RowChangedName="CanditesRowChanged" msprop:Generator_TablePropName="Candites" msprop:Generator_RowDeletingName="CanditesRowDeleting" msprop:Generator_RowChangingName="CanditesRowChanging" msprop:Generator_RowEvHandlerName="CanditesRowChangeEventHandler" msprop:Generator_RowDeletedName="CanditesRowDeleted" msprop:Generator_RowClassName="CanditesRow" msprop:Generator_UserTableName="Candites" msprop:Generator_RowEvArgName="CanditesRowChangeEvent">
+        <xs:element name="Candites" msprop:Generator_TableClassName="CanditesDataTable" msprop:Generator_TableVarName="tableCandites" msprop:Generator_TablePropName="Candites" msprop:Generator_RowDeletingName="CanditesRowDeleting" msprop:Generator_RowChangingName="CanditesRowChanging" msprop:Generator_RowEvHandlerName="CanditesRowChangeEventHandler" msprop:Generator_RowDeletedName="CanditesRowDeleted" msprop:Generator_UserTableName="Candites" msprop:Generator_RowChangedName="CanditesRowChanged" msprop:Generator_RowEvArgName="CanditesRowChangeEvent" msprop:Generator_RowClassName="CanditesRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Candites_ID" msprop:Generator_ColumnVarNameInTable="columnCandites_ID" msprop:Generator_ColumnPropNameInRow="Candites_ID" msprop:Generator_ColumnPropNameInTable="Candites_IDColumn" msprop:Generator_UserColumnName="Candites_ID" type="xs:int" />
+              <xs:element name="Candites_ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCandites_ID" msprop:Generator_ColumnPropNameInRow="Candites_ID" msprop:Generator_ColumnPropNameInTable="Candites_IDColumn" msprop:Generator_UserColumnName="Candites_ID" type="xs:int" />
               <xs:element name="Jelöltek" msprop:Generator_ColumnVarNameInTable="columnJelöltek" msprop:Generator_ColumnPropNameInRow="Jelöltek" msprop:Generator_ColumnPropNameInTable="JelöltekColumn" msprop:Generator_UserColumnName="Jelöltek">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -137,7 +137,7 @@ SELECT Id, Felhasználó, Jelszó, Voks FROM Users WHERE (Id = @Id)</CommandText
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_RowClassName="UsersRow" msprop:Generator_UserTableName="Users" msprop:Generator_RowEvArgName="UsersRowChangeEvent">
+        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_UserTableName="Users" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_RowEvArgName="UsersRowChangeEvent" msprop:Generator_RowClassName="UsersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -172,7 +172,7 @@ SELECT Id, Felhasználó, Jelszó, Voks FROM Users WHERE (Id = @Id)</CommandText
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Users_ToCandites" msdata:parent="Candites" msdata:child="Users" msdata:parentkey="Candites_ID" msdata:childkey="Voks" msprop:Generator_UserChildTable="Users" msprop:Generator_ChildPropName="GetUsersRows" msprop:Generator_UserRelationName="FK_Users_ToCandites" msprop:Generator_RelationVarName="relationFK_Users_ToCandites" msprop:Generator_UserParentTable="Candites" msprop:Generator_ParentPropName="CanditesRow" />
+      <msdata:Relationship name="FK_Users_ToCandites" msdata:parent="Candites" msdata:child="Users" msdata:parentkey="Candites_ID" msdata:childkey="Voks" msprop:Generator_UserChildTable="Users" msprop:Generator_ChildPropName="GetUsersRows" msprop:Generator_UserRelationName="FK_Users_ToCandites" msprop:Generator_ParentPropName="CanditesRow" msprop:Generator_RelationVarName="relationFK_Users_ToCandites" msprop:Generator_UserParentTable="Candites" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

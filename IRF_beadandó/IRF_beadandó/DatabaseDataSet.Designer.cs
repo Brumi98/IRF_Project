@@ -411,10 +411,10 @@ namespace IRF_beadandó {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CanditesRow AddCanditesRow(int Candites_ID, string Jelöltek) {
+            public CanditesRow AddCanditesRow(string Jelöltek) {
                 CanditesRow rowCanditesRow = ((CanditesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Candites_ID,
+                        null,
                         Jelöltek};
                 rowCanditesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCanditesRow);
@@ -458,6 +458,9 @@ namespace IRF_beadandó {
                 base.Columns.Add(this.columnJelöltek);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCandites_ID}, true));
+                this.columnCandites_ID.AutoIncrement = true;
+                this.columnCandites_ID.AutoIncrementSeed = -1;
+                this.columnCandites_ID.AutoIncrementStep = -1;
                 this.columnCandites_ID.AllowDBNull = false;
                 this.columnCandites_ID.Unique = true;
                 this.columnJelöltek.AllowDBNull = false;
