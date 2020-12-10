@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IRF_beadandó.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,22 @@ namespace IRF_beadandó
 {
     public partial class Form_Login : Form
     {
+        DatabaseEntities_1 context = new DatabaseEntities_1();
+        Main_User Gazda = new Main_User();
+
+
         public Form_Login()
         {
             InitializeComponent();
+            
+            Gazda.nev  = "admin";
+            Gazda.jelszo  = "Asdfg1234";
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "admin" & txtPassword.Text == "Asdfg1234")
+            if (txtUsername.Text == Gazda.nev  & txtPassword.Text == Gazda.jelszo)
             {
                 
                 Form_Main fm = new Form_Main();

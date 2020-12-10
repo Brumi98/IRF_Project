@@ -10,8 +10,10 @@ namespace IRF_beadandó.Entities
     {
         public int ID { get; set; }
 
-        public string nev { get; set; }
+        public string Felhasználó { get; set; }
 
-        public string jelszo { get; set; }
+        public string Jelszó { get; set; }
+
+        public int JelöltekFK { get; set; }
     }
 }

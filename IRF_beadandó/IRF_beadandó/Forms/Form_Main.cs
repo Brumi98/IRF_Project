@@ -71,7 +71,7 @@ namespace IRF_beadandó
             var series = chartSzavazas.Series[0];
             series.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series.XValueMember = "JelöltekFK";
-
+            
 
 
 
