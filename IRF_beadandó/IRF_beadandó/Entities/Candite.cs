@@ -8,7 +8,8 @@ namespace IRF_beadandó.Entities
 {
     public class Candite
     {
-        public string nev { get; set; }
+        public int Candites_ID { get; set; }
+        public string Jelöltek { get; set; }
 
     }
 }

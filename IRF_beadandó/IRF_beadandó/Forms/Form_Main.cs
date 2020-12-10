@@ -22,6 +22,8 @@ namespace IRF_beadandó
 
             context.Users.Load();
             context.Candites.Load();
+            CreateChart();
+
 
             userBindingSource.DataSource = context.Users.Local;
             canditeBindingSource.DataSource = context.Candites.Local;
@@ -31,13 +33,8 @@ namespace IRF_beadandó
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            User user = new User();
+            UserCreater();
 
-            user.Felhasználó = txtFelhasználó.Text;
-            user.Jelszó = txtJelszo.Text;
-            //user.JelöltekFK = Convert.ToInt32(cmbJelolt.SelectedItem);
-
-            userBindingSource.Add(user);
             userBindingSource.EndEdit();
 
             try
@@ -51,6 +48,32 @@ namespace IRF_beadandó
             }
 
             userDataGridView.Refresh();
+
+        }
+
+        private void UserCreater()
+        {
+            User user = new User();
+
+            user.Felhasználó = txtFelhasználó.Text;
+            user.Jelszó = txtJelszo.Text;
+            user.JelöltekFK = cmbJelolt.SelectedIndex + 1;
+
+            userBindingSource.Add(user);
+        }
+
+        private void CreateChart() 
+        {
+
+            chartSzavazas.DataSource = userBindingSource;
+
+
+            var series = chartSzavazas.Series[0];
+            series.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series.XValueMember = "JelöltekFK";
+
+
+
 
         }
 

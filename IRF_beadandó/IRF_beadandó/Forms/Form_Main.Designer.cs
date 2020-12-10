@@ -31,6 +31,9 @@ namespace IRF_beadandó
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnAdd = new System.Windows.Forms.Button();
             this.userBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -58,18 +61,20 @@ namespace IRF_beadandó
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.chartSzavazas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingNavigator)).BeginInit();
             this.userBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.canditeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSzavazas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(376, 120);
+            this.btnAdd.Location = new System.Drawing.Point(423, 139);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(94, 36);
+            this.btnAdd.Size = new System.Drawing.Size(118, 51);
             this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "Hozzáad";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -214,9 +219,9 @@ namespace IRF_beadandó
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.userDataGridView.DataSource = this.userBindingSource;
-            this.userDataGridView.Location = new System.Drawing.Point(32, 226);
+            this.userDataGridView.Location = new System.Drawing.Point(44, 243);
             this.userDataGridView.Name = "userDataGridView";
-            this.userDataGridView.Size = new System.Drawing.Size(833, 369);
+            this.userDataGridView.Size = new System.Drawing.Size(497, 348);
             this.userDataGridView.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn1
@@ -254,14 +259,14 @@ namespace IRF_beadandó
             // 
             // txtFelhasználó
             // 
-            this.txtFelhasználó.Location = new System.Drawing.Point(172, 110);
+            this.txtFelhasználó.Location = new System.Drawing.Point(161, 111);
             this.txtFelhasználó.Name = "txtFelhasználó";
             this.txtFelhasználó.Size = new System.Drawing.Size(100, 20);
             this.txtFelhasználó.TabIndex = 13;
             // 
             // txtJelszo
             // 
-            this.txtJelszo.Location = new System.Drawing.Point(172, 135);
+            this.txtJelszo.Location = new System.Drawing.Point(161, 136);
             this.txtJelszo.Name = "txtJelszo";
             this.txtJelszo.Size = new System.Drawing.Size(100, 20);
             this.txtJelszo.TabIndex = 14;
@@ -271,7 +276,7 @@ namespace IRF_beadandó
             this.cmbJelolt.DataSource = this.canditeBindingSource;
             this.cmbJelolt.DisplayMember = "Jelöltek";
             this.cmbJelolt.FormattingEnabled = true;
-            this.cmbJelolt.Location = new System.Drawing.Point(172, 162);
+            this.cmbJelolt.Location = new System.Drawing.Point(161, 163);
             this.cmbJelolt.Name = "cmbJelolt";
             this.cmbJelolt.Size = new System.Drawing.Size(121, 21);
             this.cmbJelolt.TabIndex = 15;
@@ -280,7 +285,7 @@ namespace IRF_beadandó
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 113);
+            this.label2.Location = new System.Drawing.Point(41, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 17;
@@ -289,7 +294,7 @@ namespace IRF_beadandó
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 138);
+            this.label3.Location = new System.Drawing.Point(41, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 18;
@@ -298,17 +303,37 @@ namespace IRF_beadandó
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 165);
+            this.label4.Location = new System.Drawing.Point(41, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 19;
             this.label4.Text = "Jelöltek";
+            // 
+            // chartSzavazas
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartSzavazas.ChartAreas.Add(chartArea1);
+            this.chartSzavazas.DataSource = this.userBindingSource;
+            legend1.Name = "Legend1";
+            this.chartSzavazas.Legends.Add(legend1);
+            this.chartSzavazas.Location = new System.Drawing.Point(576, 111);
+            this.chartSzavazas.Name = "chartSzavazas";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.XValueMember = "JelöltekFK";
+            series1.YValueMembers = "JelöltekFK";
+            this.chartSzavazas.Series.Add(series1);
+            this.chartSzavazas.Size = new System.Drawing.Size(554, 480);
+            this.chartSzavazas.TabIndex = 20;
+            this.chartSzavazas.Text = "chart1";
             // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1223, 635);
+            this.Controls.Add(this.chartSzavazas);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -326,6 +351,7 @@ namespace IRF_beadandó
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.canditeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSzavazas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,6 +385,7 @@ namespace IRF_beadandó
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartSzavazas;
     }
 }
 
