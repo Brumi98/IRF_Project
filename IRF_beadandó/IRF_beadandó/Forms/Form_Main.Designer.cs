@@ -50,10 +50,10 @@ namespace IRF_beadandó
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.userBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.userDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.user_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_Felhasznalo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_Jelszo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_Jelolt = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.canditeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtFelhasználó = new System.Windows.Forms.TextBox();
             this.txtJelszo = new System.Windows.Forms.TextBox();
@@ -62,6 +62,7 @@ namespace IRF_beadandó
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.chartSzavazas = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingNavigator)).BeginInit();
             this.userBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -72,7 +73,7 @@ namespace IRF_beadandó
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(423, 139);
+            this.btnAdd.Location = new System.Drawing.Point(423, 95);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(118, 51);
             this.btnAdd.TabIndex = 10;
@@ -214,44 +215,44 @@ namespace IRF_beadandó
             this.userDataGridView.AutoGenerateColumns = false;
             this.userDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
+            this.user_ID,
+            this.user_Felhasznalo,
+            this.user_Jelszo,
+            this.user_Jelolt});
             this.userDataGridView.DataSource = this.userBindingSource;
             this.userDataGridView.Location = new System.Drawing.Point(44, 243);
             this.userDataGridView.Name = "userDataGridView";
             this.userDataGridView.Size = new System.Drawing.Size(497, 348);
             this.userDataGridView.TabIndex = 11;
             // 
-            // dataGridViewTextBoxColumn1
+            // user_ID
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.user_ID.DataPropertyName = "Id";
+            this.user_ID.HeaderText = "Id";
+            this.user_ID.Name = "user_ID";
             // 
-            // dataGridViewTextBoxColumn2
+            // user_Felhasznalo
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Felhasználó";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Felhasználó";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.user_Felhasznalo.DataPropertyName = "Felhasználó";
+            this.user_Felhasznalo.HeaderText = "Felhasználó";
+            this.user_Felhasznalo.Name = "user_Felhasznalo";
             // 
-            // dataGridViewTextBoxColumn3
+            // user_Jelszo
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Jelszó";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Jelszó";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.user_Jelszo.DataPropertyName = "Jelszó";
+            this.user_Jelszo.HeaderText = "Jelszó";
+            this.user_Jelszo.Name = "user_Jelszo";
             // 
-            // dataGridViewTextBoxColumn4
+            // user_Jelolt
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "JelöltekFK";
-            this.dataGridViewTextBoxColumn4.DataSource = this.canditeBindingSource;
-            this.dataGridViewTextBoxColumn4.DisplayMember = "Jelöltek";
-            this.dataGridViewTextBoxColumn4.HeaderText = "JelöltekFK";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn4.ValueMember = "Candites_ID";
+            this.user_Jelolt.DataPropertyName = "JelöltekFK";
+            this.user_Jelolt.DataSource = this.canditeBindingSource;
+            this.user_Jelolt.DisplayMember = "Jelöltek";
+            this.user_Jelolt.HeaderText = "JelöltekFK";
+            this.user_Jelolt.Name = "user_Jelolt";
+            this.user_Jelolt.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.user_Jelolt.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.user_Jelolt.ValueMember = "Candites_ID";
             // 
             // canditeBindingSource
             // 
@@ -327,11 +328,22 @@ namespace IRF_beadandó
             this.chartSzavazas.TabIndex = 20;
             this.chartSzavazas.Text = "chart1";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(423, 166);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(118, 51);
+            this.btnDelete.TabIndex = 21;
+            this.btnDelete.Text = "Törlés";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1223, 635);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.chartSzavazas);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -373,10 +385,6 @@ namespace IRF_beadandó
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton userBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView userDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.BindingSource canditeBindingSource;
         private System.Windows.Forms.TextBox txtFelhasználó;
         private System.Windows.Forms.TextBox txtJelszo;
@@ -385,6 +393,11 @@ namespace IRF_beadandó
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartSzavazas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user_Felhasznalo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user_Jelszo;
+        private System.Windows.Forms.DataGridViewComboBoxColumn user_Jelolt;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 

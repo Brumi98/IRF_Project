@@ -16,7 +16,7 @@ namespace IRF_beadandó
     {
         Random rnd = new Random();
         DatabaseEntities_1 context = new DatabaseEntities_1();
-        private User user = new User();
+        User szavazo = new User();
 
         public Form_Main()
         {
@@ -35,9 +35,46 @@ namespace IRF_beadandó
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            UserCreater();
 
-            userBindingSource.EndEdit();
+            if (txtFelhasználó.Text != "" && txtJelszo.Text != "")
+            {
+                UserCreater();
+
+                try
+                {
+                    context.SaveChanges();
+                    MessageBox.Show("Sikeres szavazó hozzáadás.");
+                    userBindingSource.EndEdit();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ki kell tölteni az adatokat!");
+            }
+
+            userDataGridView.Refresh();
+
+        }
+
+        private void UserCreater()
+        {
+                szavazo.Felhasználó = txtFelhasználó.Text;
+                szavazo.Jelszó = txtJelszo.Text;
+                szavazo.JelöltekFK = cmbJelolt.SelectedIndex + 1;
+
+                userBindingSource.Add(szavazo);
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int rowIndex = userDataGridView.CurrentCell.RowIndex;
+            userDataGridView.Rows.RemoveAt(rowIndex);
 
             try
             {
@@ -48,19 +85,7 @@ namespace IRF_beadandó
 
                 MessageBox.Show(ex.Message);
             }
-
             userDataGridView.Refresh();
-
-        }
-
-        private void UserCreater()
-        {
-            
-            user.Felhasználó = txtFelhasználó.Text;
-            user.Jelszó = txtJelszo.Text;
-            user.JelöltekFK = cmbJelolt.SelectedIndex + 1;
-
-            userBindingSource.Add(user);
         }
 
         //private void CreateChart() 
