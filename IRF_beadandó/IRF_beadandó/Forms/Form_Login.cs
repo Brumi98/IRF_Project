@@ -22,7 +22,7 @@ namespace IRF_beadandó
             InitializeComponent();
             
             Gazda.nev  = "admin";
-            Gazda.jelszo  = "Asdfg1234";
+            Gazda.jelszo  = "";
 
         }
 

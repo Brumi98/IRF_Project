@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IRF_beadandó.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace IRF_beadandó
     {
         Random rnd = new Random();
         DatabaseEntities_1 context = new DatabaseEntities_1();
+        private User user = new User();
 
         public Form_Main()
         {
@@ -22,7 +24,7 @@ namespace IRF_beadandó
 
             context.Users.Load();
             context.Candites.Load();
-            CreateChart();
+            //CreateChart();
 
 
             userBindingSource.DataSource = context.Users.Local;
@@ -53,8 +55,7 @@ namespace IRF_beadandó
 
         private void UserCreater()
         {
-            User user = new User();
-
+            
             user.Felhasználó = txtFelhasználó.Text;
             user.Jelszó = txtJelszo.Text;
             user.JelöltekFK = cmbJelolt.SelectedIndex + 1;
@@ -62,20 +63,10 @@ namespace IRF_beadandó
             userBindingSource.Add(user);
         }
 
-        private void CreateChart() 
-        {
+        //private void CreateChart() 
+        //{
 
-            chartSzavazas.DataSource = userBindingSource;
-
-
-            var series = chartSzavazas.Series[0];
-            series.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series.XValueMember = "JelöltekFK";
-            
-
-
-
-        }
+        //}
 
     }
 }

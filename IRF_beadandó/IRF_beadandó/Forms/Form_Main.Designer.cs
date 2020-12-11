@@ -319,10 +319,9 @@ namespace IRF_beadandó
             this.chartSzavazas.Location = new System.Drawing.Point(576, 111);
             this.chartSzavazas.Name = "chartSzavazas";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            series1.XValueMember = "JelöltekFK";
-            series1.YValueMembers = "JelöltekFK";
             this.chartSzavazas.Series.Add(series1);
             this.chartSzavazas.Size = new System.Drawing.Size(554, 480);
             this.chartSzavazas.TabIndex = 20;
