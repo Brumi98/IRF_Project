@@ -34,11 +34,12 @@ namespace IRF_beadandó
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
+            this.btnVissza = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(166, 271);
+            this.button1.Location = new System.Drawing.Point(168, 268);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(195, 65);
             this.button1.TabIndex = 0;
@@ -80,11 +81,22 @@ namespace IRF_beadandó
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Jelszó";
             // 
+            // btnVissza
+            // 
+            this.btnVissza.Location = new System.Drawing.Point(406, 319);
+            this.btnVissza.Name = "btnVissza";
+            this.btnVissza.Size = new System.Drawing.Size(66, 65);
+            this.btnVissza.TabIndex = 5;
+            this.btnVissza.Text = "Vissza";
+            this.btnVissza.UseVisualStyleBackColor = true;
+            this.btnVissza.Click += new System.EventHandler(this.btnVissza_Click);
+            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 396);
+            this.Controls.Add(this.btnVissza);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtPassword);
@@ -104,5 +116,6 @@ namespace IRF_beadandó
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Button btnVissza;
     }
 }

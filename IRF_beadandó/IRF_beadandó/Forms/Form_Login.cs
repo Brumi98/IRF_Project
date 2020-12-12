@@ -15,7 +15,7 @@ namespace IRF_beadandó
     {
         DatabaseEntities_1 context = new DatabaseEntities_1();
         Main_User Gazda = new Main_User();
-
+        
 
         public Form_Login()
         {
@@ -40,6 +40,12 @@ namespace IRF_beadandó
             {
                 MessageBox.Show("Nem megfelelő felhasználónév vagy jelszó");
             }
+
+        }
+
+        private void btnVissza_Click(object sender, EventArgs e)
+        {
+            this.Close();            
 
         }
     }

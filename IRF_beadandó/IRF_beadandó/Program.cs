@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IRF_beadandó.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace IRF_beadandó
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Login());
+            Application.Run(new Form_Elso());
         }
     }
 }
