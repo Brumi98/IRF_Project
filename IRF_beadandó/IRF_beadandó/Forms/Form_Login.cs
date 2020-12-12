@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IRF_beadandó.Forms;
 
 namespace IRF_beadandó
 {
@@ -45,8 +46,9 @@ namespace IRF_beadandó
 
         private void btnVissza_Click(object sender, EventArgs e)
         {
-            this.Close();            
-
+            this.Close();
+            Form_Elso fe = new Form_Elso();
+            fe.Show();
         }
     }
 }
