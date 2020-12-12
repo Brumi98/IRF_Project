@@ -63,12 +63,16 @@ namespace IRF_beadandó
             this.label4 = new System.Windows.Forms.Label();
             this.chartSzavazas = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.canditeBindingSourceChart = new System.Windows.Forms.BindingSource(this.components);
+            this.listBoxCandite = new System.Windows.Forms.ListBox();
+            this.txtBoxCandite = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingNavigator)).BeginInit();
             this.userBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.canditeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSzavazas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.canditeBindingSourceChart)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -314,17 +318,19 @@ namespace IRF_beadandó
             // 
             chartArea1.Name = "ChartArea1";
             this.chartSzavazas.ChartAreas.Add(chartArea1);
-            this.chartSzavazas.DataSource = this.userBindingSource;
+            this.chartSzavazas.DataSource = this.canditeBindingSource;
             legend1.Name = "Legend1";
             this.chartSzavazas.Legends.Add(legend1);
-            this.chartSzavazas.Location = new System.Drawing.Point(576, 111);
+            this.chartSzavazas.Location = new System.Drawing.Point(627, 243);
             this.chartSzavazas.Name = "chartSzavazas";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
+            series1.XValueMember = "Candite";
+            series1.YValueMembers = "JelöltekFK";
             this.chartSzavazas.Series.Add(series1);
-            this.chartSzavazas.Size = new System.Drawing.Size(554, 480);
+            this.chartSzavazas.Size = new System.Drawing.Size(503, 348);
             this.chartSzavazas.TabIndex = 20;
             this.chartSzavazas.Text = "chart1";
             // 
@@ -338,11 +344,29 @@ namespace IRF_beadandó
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // listBoxCandite
+            // 
+            this.listBoxCandite.FormattingEnabled = true;
+            this.listBoxCandite.Location = new System.Drawing.Point(627, 83);
+            this.listBoxCandite.Name = "listBoxCandite";
+            this.listBoxCandite.Size = new System.Drawing.Size(184, 134);
+            this.listBoxCandite.TabIndex = 22;
+            // 
+            // txtBoxCandite
+            // 
+            this.txtBoxCandite.Location = new System.Drawing.Point(627, 50);
+            this.txtBoxCandite.Name = "txtBoxCandite";
+            this.txtBoxCandite.Size = new System.Drawing.Size(184, 20);
+            this.txtBoxCandite.TabIndex = 23;
+            this.txtBoxCandite.TextChanged += new System.EventHandler(this.txtBoxCandite_TextChanged);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1223, 635);
+            this.ClientSize = new System.Drawing.Size(1223, 912);
+            this.Controls.Add(this.txtBoxCandite);
+            this.Controls.Add(this.listBoxCandite);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.chartSzavazas);
             this.Controls.Add(this.label4);
@@ -363,6 +387,7 @@ namespace IRF_beadandó
             ((System.ComponentModel.ISupportInitialize)(this.userDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.canditeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSzavazas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.canditeBindingSourceChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,6 +423,9 @@ namespace IRF_beadandó
         private System.Windows.Forms.DataGridViewTextBoxColumn user_Jelszo;
         private System.Windows.Forms.DataGridViewComboBoxColumn user_Jelolt;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.BindingSource canditeBindingSourceChart;
+        private System.Windows.Forms.ListBox listBoxCandite;
+        private System.Windows.Forms.TextBox txtBoxCandite;
     }
 }
 

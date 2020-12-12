@@ -1,5 +1,4 @@
-﻿using IRF_beadandó.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +23,8 @@ namespace IRF_beadandó
 
             context.Users.Load();
             context.Candites.Load();
-            //CreateChart();
+            GetJelolt();
+            GetVote();
 
 
             userBindingSource.DataSource = context.Users.Local;
@@ -88,10 +88,44 @@ namespace IRF_beadandó
             userDataGridView.Refresh();
         }
 
-        //private void CreateChart() 
-        //{
+        private void GetJelolt()
+        {
+            var jelolt = from x in context.Candites
+                         where x.Jelöltek.StartsWith(txtBoxCandite.Text)
+                         select x.Jelöltek;
 
-        //}
+            listBoxCandite.DataSource = jelolt.Distinct().ToList();
 
+        }
+
+        private void GetVote()
+        {
+            var selectedjelolt = (string)listBoxCandite.SelectedItem;
+            var jeloltszam = from x in context.Users
+                             where x.JelöltekFK.ToString() == selectedjelolt
+                             select x;
+
+            userBindingSource.DataSource = jeloltszam.ToList();
+
+            var szavazatszam = (from x in jeloltszam
+                                group x by new { x.Candite.Jelöltek } into g
+                                select new Candite()
+                                {
+
+                                    Jelöltek = g.Key.Jelöltek,
+                                    Candites_ID = (from x in g
+                                                   select x.JelöltekFK).Count()
+
+                                });
+
+            //canditeBindingSource.DataSource = szavazatszam.ToList();
+
+            chartSzavazas.DataBind();
+        }
+
+        private void txtBoxCandite_TextChanged(object sender, EventArgs e)
+        {
+            GetJelolt();
+        }
     }
 }
