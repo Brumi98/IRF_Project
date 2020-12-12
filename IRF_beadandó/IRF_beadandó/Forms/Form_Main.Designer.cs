@@ -66,6 +66,7 @@ namespace IRF_beadandó
             this.canditeBindingSourceChart = new System.Windows.Forms.BindingSource(this.components);
             this.listBoxCandite = new System.Windows.Forms.ListBox();
             this.txtBoxCandite = new System.Windows.Forms.TextBox();
+            this.checkBoxRandom = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingNavigator)).BeginInit();
             this.userBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -360,11 +361,23 @@ namespace IRF_beadandó
             this.txtBoxCandite.TabIndex = 23;
             this.txtBoxCandite.TextChanged += new System.EventHandler(this.txtBoxCandite_TextChanged);
             // 
+            // checkBoxRandom
+            // 
+            this.checkBoxRandom.AutoSize = true;
+            this.checkBoxRandom.Location = new System.Drawing.Point(161, 200);
+            this.checkBoxRandom.Name = "checkBoxRandom";
+            this.checkBoxRandom.Size = new System.Drawing.Size(111, 17);
+            this.checkBoxRandom.TabIndex = 24;
+            this.checkBoxRandom.Text = "Véletlen szavazás";
+            this.checkBoxRandom.UseVisualStyleBackColor = true;
+            this.checkBoxRandom.CheckStateChanged += new System.EventHandler(this.checkBoxRandom_CheckStateChanged);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1223, 912);
+            this.Controls.Add(this.checkBoxRandom);
             this.Controls.Add(this.txtBoxCandite);
             this.Controls.Add(this.listBoxCandite);
             this.Controls.Add(this.btnDelete);
@@ -426,6 +439,7 @@ namespace IRF_beadandó
         private System.Windows.Forms.BindingSource canditeBindingSourceChart;
         private System.Windows.Forms.ListBox listBoxCandite;
         private System.Windows.Forms.TextBox txtBoxCandite;
+        private System.Windows.Forms.CheckBox checkBoxRandom;
     }
 }
 

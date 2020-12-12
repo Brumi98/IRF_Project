@@ -63,11 +63,22 @@ namespace IRF_beadandó
 
         private void UserCreater()
         {
-                szavazo.Felhasználó = txtFelhasználó.Text;
-                szavazo.Jelszó = txtJelszo.Text;
-                szavazo.JelöltekFK = cmbJelolt.SelectedIndex + 1;
 
-                userBindingSource.Add(szavazo);
+            Random rnd = new Random();
+            string szam = listBoxCandite.Items.Count.ToString();
+
+            szavazo.Felhasználó = txtFelhasználó.Text;
+            szavazo.Jelszó = txtJelszo.Text;
+            if (cmbJelolt.Enabled == true)
+            {
+                szavazo.JelöltekFK = cmbJelolt.SelectedIndex + 1;
+            }
+            else
+            {
+                szavazo.JelöltekFK = rnd.Next(1,Convert.ToInt32(szam));
+            }
+
+            userBindingSource.Add(szavazo);
 
         }
 
@@ -126,6 +137,19 @@ namespace IRF_beadandó
         private void txtBoxCandite_TextChanged(object sender, EventArgs e)
         {
             GetJelolt();
+        }
+
+        private void checkBoxRandom_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (checkBoxRandom.Checked != true)
+            {
+                 cmbJelolt.Enabled = true;
+            }
+            else
+            {
+                cmbJelolt.Enabled = false;
+            }
+
         }
     }
 }
