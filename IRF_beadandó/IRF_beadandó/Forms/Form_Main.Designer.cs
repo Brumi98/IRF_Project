@@ -112,7 +112,7 @@ namespace IRF_beadandó
             this.userBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.userBindingNavigator.Name = "userBindingNavigator";
             this.userBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.userBindingNavigator.Size = new System.Drawing.Size(1223, 25);
+            this.userBindingNavigator.Size = new System.Drawing.Size(1134, 25);
             this.userBindingNavigator.TabIndex = 11;
             this.userBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -322,7 +322,7 @@ namespace IRF_beadandó
             this.chartSzavazas.DataSource = this.canditeBindingSource;
             legend1.Name = "Legend1";
             this.chartSzavazas.Legends.Add(legend1);
-            this.chartSzavazas.Location = new System.Drawing.Point(627, 243);
+            this.chartSzavazas.Location = new System.Drawing.Point(592, 243);
             this.chartSzavazas.Name = "chartSzavazas";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
@@ -348,14 +348,14 @@ namespace IRF_beadandó
             // listBoxCandite
             // 
             this.listBoxCandite.FormattingEnabled = true;
-            this.listBoxCandite.Location = new System.Drawing.Point(627, 83);
+            this.listBoxCandite.Location = new System.Drawing.Point(592, 83);
             this.listBoxCandite.Name = "listBoxCandite";
             this.listBoxCandite.Size = new System.Drawing.Size(184, 134);
             this.listBoxCandite.TabIndex = 22;
             // 
             // txtBoxCandite
             // 
-            this.txtBoxCandite.Location = new System.Drawing.Point(627, 50);
+            this.txtBoxCandite.Location = new System.Drawing.Point(592, 50);
             this.txtBoxCandite.Name = "txtBoxCandite";
             this.txtBoxCandite.Size = new System.Drawing.Size(184, 20);
             this.txtBoxCandite.TabIndex = 23;
@@ -376,7 +376,7 @@ namespace IRF_beadandó
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1223, 912);
+            this.ClientSize = new System.Drawing.Size(1134, 661);
             this.Controls.Add(this.checkBoxRandom);
             this.Controls.Add(this.txtBoxCandite);
             this.Controls.Add(this.listBoxCandite);
@@ -391,6 +391,8 @@ namespace IRF_beadandó
             this.Controls.Add(this.userDataGridView);
             this.Controls.Add(this.userBindingNavigator);
             this.Controls.Add(this.btnAdd);
+            this.MaximumSize = new System.Drawing.Size(1150, 700);
+            this.MinimumSize = new System.Drawing.Size(1150, 700);
             this.Name = "Form_Main";
             this.Text = "Főoldal";
             ((System.ComponentModel.ISupportInitialize)(this.userBindingNavigator)).EndInit();

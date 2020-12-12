@@ -1,7 +1,7 @@
 ﻿
-namespace IRF_beadandó
+namespace IRF_beadandó.Forms
 {
-    partial class Form_User
+    partial class Form_Alap
     {
         /// <summary>
         /// Required designer variable.
@@ -29,21 +29,33 @@ namespace IRF_beadandó
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // Form_User
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1134, 661);
+            this.panel1.TabIndex = 0;
+            // 
+            // Form_Alap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 661);
+            this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(1150, 700);
             this.MinimumSize = new System.Drawing.Size(1150, 700);
-            this.Name = "Form_User";
-            this.Text = "Form_User";
+            this.Name = "Form_Alap";
+            this.Text = "Form_Alap";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
     }
 }

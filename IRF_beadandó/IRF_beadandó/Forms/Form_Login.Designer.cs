@@ -38,9 +38,9 @@ namespace IRF_beadandó
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(362, 349);
+            this.button1.Location = new System.Drawing.Point(166, 271);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 61);
+            this.button1.Size = new System.Drawing.Size(195, 65);
             this.button1.TabIndex = 0;
             this.button1.Text = "Belépés";
             this.button1.UseVisualStyleBackColor = true;
@@ -48,14 +48,14 @@ namespace IRF_beadandó
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(362, 242);
+            this.txtUsername.Location = new System.Drawing.Point(166, 112);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(197, 20);
             this.txtUsername.TabIndex = 1;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(362, 288);
+            this.txtPassword.Location = new System.Drawing.Point(166, 189);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(197, 20);
             this.txtPassword.TabIndex = 2;
@@ -64,7 +64,7 @@ namespace IRF_beadandó
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblUsername.Location = new System.Drawing.Point(225, 244);
+            this.lblUsername.Location = new System.Drawing.Point(29, 114);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(111, 18);
             this.lblUsername.TabIndex = 3;
@@ -74,7 +74,7 @@ namespace IRF_beadandó
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPassword.Location = new System.Drawing.Point(225, 288);
+            this.lblPassword.Location = new System.Drawing.Point(29, 189);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(52, 18);
             this.lblPassword.TabIndex = 4;
@@ -84,7 +84,7 @@ namespace IRF_beadandó
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 534);
+            this.ClientSize = new System.Drawing.Size(484, 396);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtPassword);

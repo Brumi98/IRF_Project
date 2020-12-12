@@ -80,6 +80,18 @@
     <Compile Include="Entities\Candite.cs" />
     <Compile Include="Entities\Main_User.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Forms\Form_Alap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Alap.Designer.cs">
+      <DependentUpon>Form_Alap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Elso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Elso.Designer.cs">
+      <DependentUpon>Form_Elso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +131,12 @@
     <Compile Include="User.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Form_Alap.resx">
+      <DependentUpon>Form_Alap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Elso.resx">
+      <DependentUpon>Form_Elso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Main.resx">
       <DependentUpon>Form_Main.cs</DependentUpon>
     </EmbeddedResource>

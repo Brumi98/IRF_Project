@@ -1,7 +1,7 @@
 ﻿
-namespace IRF_beadandó
+namespace IRF_beadandó.Forms
 {
-    partial class Form_User
+    partial class Form_Elso
     {
         /// <summary>
         /// Required designer variable.
@@ -31,15 +31,15 @@ namespace IRF_beadandó
         {
             this.SuspendLayout();
             // 
-            // Form_User
+            // Form_Elso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1134, 661);
             this.MaximumSize = new System.Drawing.Size(1150, 700);
             this.MinimumSize = new System.Drawing.Size(1150, 700);
-            this.Name = "Form_User";
-            this.Text = "Form_User";
+            this.Name = "Form_Elso";
+            this.Text = "Form_Elso";
             this.ResumeLayout(false);
 
         }
