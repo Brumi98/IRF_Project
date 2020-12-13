@@ -33,38 +33,43 @@ namespace IRF_beadandó
 
         }
 
+        public User Check(string Felhasználó, string Jelszó)
+        {
+            if (!ValidateFelhasznalo(Felhasználó))
+                throw new ValidationException(
+                    "A felhasználónév nem megfelelő!");
+            if (!ValidateJelszo(Jelszó))
+                throw new ValidationException(
+                    "A megadott jelszó nem megfelelő!");
+
+            var user = new User()
+            {
+                Felhasználó = Felhasználó,
+                Jelszó = Jelszó
+            };
+
+            userBindingSource.Add(user);
+
+            return user;
+        }
 
         private void btnSzavazas_Click(object sender, EventArgs e)
         {
+
+            if (!Regex.Match(txtFelhasznalo.Text, "^[A-Z][a - zA - Z]* $").Success)
+            {
+                MessageBox.Show("A felhasználónév nem felel meg a feltételeknek!");
+                txtFelhasznalo.Focus();
+                return;
+            };
+            if (!Regex.Match(txtJelszo.Text, $"[a - zA - Z0-9]* $").Success)
+            {
+                MessageBox.Show("A jelszó nem felel meg a feltételeknek!");
+                txtJelszo.Focus();
+                return;
+            };
             CreateUser();
-            txtFelhasznalo_Validating();
 
-        }
-
-        private void txtFelhasznalo_Validating()
-        {
-            Regex regex = new Regex(@"^(?!\s*$).+");
-
-            if (regex.IsMatch(txtFelhasznalo.Text))
-            {
-               
-
-                if (!String.IsNullOrWhiteSpace(txtFelhasznalo.Text))
-                {
-                    txtFelhasznalo.BackColor = Color.LightGreen;
-                }
-                else
-                {
-                    txtFelhasznalo.BackColor = Color.White;
-                }
-
-            }
-
-            else
-            {
-                
-                txtFelhasznalo.BackColor = Color.MediumVioletRed;
-            }
         }
 
         private void CreateUser()
@@ -93,6 +98,7 @@ namespace IRF_beadandó
             {
                 MessageBox.Show("Kötelező mezők nincsenek kitöltve!");
             }
+            return;
         }
 
         private void Szavazas()
@@ -105,38 +111,16 @@ namespace IRF_beadandó
             userBindingSource.Add(user);
 
         }
-
-        private void txtFelhasznalo_Validating(object sender, CancelEventArgs e)
+        public bool ValidateFelhasznalo(string Felhasználó)
         {
-
-            Regex regex = new Regex(@"^(?!\s*$).+");
-
-            if (regex.IsMatch(txtFelhasznalo.Text))
-            {
-                e.Cancel = false;
-
-                if (!String.IsNullOrWhiteSpace(txtFelhasznalo.Text))
-                {
-                    txtFelhasznalo.BackColor = Color.LightGreen;
-                }
-                else
-                {
-                    txtFelhasznalo.BackColor = Color.White;
-                }
-
-            }
-
-            else
-            {
-                e.Cancel = true;
-                txtFelhasznalo.BackColor = Color.MediumVioletRed;
-            }
-
+            return Regex.IsMatch(Felhasználó, "^[A-Z][a - zA - Z]* $");
         }
 
-        private void txtFelhasznalo_TextChanged(object sender, EventArgs e)
+        public bool ValidateJelszo(string Jelszó)
         {
-            this.Validate();
+
+            return Regex.IsMatch(Jelszó, $"[a - zA - Z0-9]* $");
+
         }
     }
 }

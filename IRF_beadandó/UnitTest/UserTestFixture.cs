@@ -13,13 +13,21 @@ namespace UnitTest
     class UserTestFixture
     {
 
-        [Test]
+        [
+            Test,
+            TestCase("@Ira92", false),
+            TestCase("Mariska02", true),
+            TestCase("<jozsika>", false)
+        ]
 
 
         public void TestValidateJelszo(string jelszo, bool exptedResult)
         {
-            
+            var user = new User();
 
+            var actualResult = 
+
+            //Assert.AreEqual(exptedResult, actualResult);
 
 
         }
