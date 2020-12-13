@@ -328,8 +328,8 @@ namespace IRF_beadandó
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            series1.XValueMember = "Candite";
-            series1.YValueMembers = "JelöltekFK";
+            series1.XValueMember = "Jelöltek";
+            series1.YValueMembers = "Candites_ID";
             this.chartSzavazas.Series.Add(series1);
             this.chartSzavazas.Size = new System.Drawing.Size(503, 348);
             this.chartSzavazas.TabIndex = 20;

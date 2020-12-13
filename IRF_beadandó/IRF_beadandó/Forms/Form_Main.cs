@@ -59,13 +59,13 @@ namespace IRF_beadandó
             }
 
             userDataGridView.Refresh();
+            GetVote();
 
         }
 
         private void UserCreater()
         {
 
-            Random rnd = new Random();
             string szam = listBoxCandite.Items.Count.ToString();
 
             szavazo.Felhasználó = txtFelhasználó.Text;
@@ -119,19 +119,17 @@ namespace IRF_beadandó
 
             userBindingSource.DataSource = jeloltszam.ToList();
 
-            var szavazatszam = (from x in jeloltszam
-                                group x by new { x.Candite.Jelöltek } into g
-                                select new Candite()
-                                {
 
-                                    Jelöltek = g.Key.Jelöltek,
-                                    Candites_ID = (from x in g
-                                                   select x.JelöltekFK).Count()
-
-                                });
-
-            //canditeBindingSource.DataSource = szavazatszam.ToList();
-
+            var szavazatszam = from x in context.Users.Local
+                               where x.JelöltekFK != null
+                               group x by new { x.Candite } into g
+                               select new Candite()
+                               {
+                                   Jelöltek = g.Key.Candite.Jelöltek,
+                                   Candites_ID = (from x in g select x).Count()
+                               };
+            canditeBindingSource.DataSource = szavazatszam.ToList();
+            canditeBindingSourceChart.DataSource = canditeBindingSource;
             chartSzavazas.DataBind();
         }
 
