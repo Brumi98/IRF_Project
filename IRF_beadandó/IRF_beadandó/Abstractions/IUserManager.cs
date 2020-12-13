@@ -8,9 +8,9 @@ using IRF_beadandó.Entities;
 
 namespace IRF_beadandó.Abstractions
 {
-    public interface AccountManager
+    public interface IUserManager
     {
-        BindingList<User> Users { get; }
+        DatabaseEntities_1 context { get; }
 
         User CreateUser(User user);
     }

@@ -73,10 +73,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstractions\AccountManager.cs" />
+    <Compile Include="Abstractions\IUserManager.cs" />
     <Compile Include="Candite.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controller\UserController.cs" />
     <Compile Include="Entities\Candite.cs" />
     <Compile Include="Entities\Main_User.cs" />
     <Compile Include="Entities\User.cs" />

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.Entity;
 using System.Text.RegularExpressions;
 using System.ComponentModel.DataAnnotations;
+using IRF_beadandó.Entities;
 
 namespace IRF_beadandó
 {
@@ -31,27 +32,39 @@ namespace IRF_beadandó
             canditeBindingSource.DataSource = context.Candites.Local;
 
         }
-        //public User Register(string Felhasználó, string Jelszó)
-        //{
 
-        //    if (!ValidateNev(Felhasználó))
-        //        throw new ValidationException("A megadott Név nem megfelelő!");
-        //    if (!ValidateJelszo(Jelszó))
-        //    {
-        //        throw new ValidationException("A megadott jelszó nem megfelelő!");
-        //    }
-        //    var user = new User()
-        //    {
-        //        Felhasználó = Felhasználó,
-        //        Jelszó = Jelszó
-        //    };
-           
-
-        //}
 
         private void btnSzavazas_Click(object sender, EventArgs e)
         {
             CreateUser();
+            txtFelhasznalo_Validating();
+
+        }
+
+        private void txtFelhasznalo_Validating()
+        {
+            Regex regex = new Regex(@"^(?!\s*$).+");
+
+            if (regex.IsMatch(txtFelhasznalo.Text))
+            {
+               
+
+                if (!String.IsNullOrWhiteSpace(txtFelhasznalo.Text))
+                {
+                    txtFelhasznalo.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    txtFelhasznalo.BackColor = Color.White;
+                }
+
+            }
+
+            else
+            {
+                
+                txtFelhasznalo.BackColor = Color.MediumVioletRed;
+            }
         }
 
         private void CreateUser()
@@ -93,20 +106,37 @@ namespace IRF_beadandó
 
         }
 
+        private void txtFelhasznalo_Validating(object sender, CancelEventArgs e)
+        {
 
-        //public bool ValidateNev(string Felhasználó)
-        //{
-        //    return Regex.IsMatch(Felhasználó, );
+            Regex regex = new Regex(@"^(?!\s*$).+");
 
+            if (regex.IsMatch(txtFelhasznalo.Text))
+            {
+                e.Cancel = false;
 
-        //}
+                if (!String.IsNullOrWhiteSpace(txtFelhasznalo.Text))
+                {
+                    txtFelhasznalo.BackColor = Color.LightGreen;
+                }
+                else
+                {
+                    txtFelhasznalo.BackColor = Color.White;
+                }
 
-        //public bool ValidateJelszo(string Jelszó)
-        //{
+            }
 
-        //    return Regex.IsMatch(Jelszó, );
+            else
+            {
+                e.Cancel = true;
+                txtFelhasznalo.BackColor = Color.MediumVioletRed;
+            }
 
+        }
 
-        //}
+        private void txtFelhasznalo_TextChanged(object sender, EventArgs e)
+        {
+            this.Validate();
+        }
     }
 }

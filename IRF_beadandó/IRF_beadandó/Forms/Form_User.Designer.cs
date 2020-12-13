@@ -51,6 +51,8 @@ namespace IRF_beadandó
             this.txtFelhasznalo.Name = "txtFelhasznalo";
             this.txtFelhasznalo.Size = new System.Drawing.Size(224, 50);
             this.txtFelhasznalo.TabIndex = 0;
+            this.txtFelhasznalo.TextChanged += new System.EventHandler(this.txtFelhasznalo_TextChanged);
+            this.txtFelhasznalo.Validating += new System.ComponentModel.CancelEventHandler(this.txtFelhasznalo_Validating);
             // 
             // txtJelszo
             // 
