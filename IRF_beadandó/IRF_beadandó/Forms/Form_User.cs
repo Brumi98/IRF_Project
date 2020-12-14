@@ -33,41 +33,42 @@ namespace IRF_beadandó
 
         }
 
-        public User Check(string Felhasználó, string Jelszó)
-        {
-            if (!ValidateFelhasznalo(Felhasználó))
-                throw new ValidationException(
-                    "A felhasználónév nem megfelelő!");
-            if (!ValidateJelszo(Jelszó))
-                throw new ValidationException(
-                    "A megadott jelszó nem megfelelő!");
+        //public User Check(string Felhasználó, string Jelszó)
+        //{
+        //    if (!ValidateFelhasznalo(Felhasználó))
+        //        throw new ValidationException(
+        //            "A felhasználónév nem megfelelő!");
+        //    if (!ValidateJelszo(Jelszó))
+        //        throw new ValidationException(
+        //            "A megadott jelszó nem megfelelő!");
 
-            var user = new User()
-            {
-                Felhasználó = Felhasználó,
-                Jelszó = Jelszó
-            };
+        //    var user = new User()
+        //    {
+        //        Felhasználó = Felhasználó,
+        //        Jelszó = Jelszó
+        //    };
 
-            userBindingSource.Add(user);
+        //    userBindingSource.Add(user);
 
-            return user;
-        }
+        //    return user;
+        //}
 
         private void btnSzavazas_Click(object sender, EventArgs e)
         {
 
-            if (!Regex.Match(txtFelhasznalo.Text, "^[A-Z][a - zA - Z]* $").Success)
-            {
-                MessageBox.Show("A felhasználónév nem felel meg a feltételeknek!");
-                txtFelhasznalo.Focus();
-                return;
-            };
-            if (!Regex.Match(txtJelszo.Text, $"[a - zA - Z0-9]* $").Success)
-            {
-                MessageBox.Show("A jelszó nem felel meg a feltételeknek!");
-                txtJelszo.Focus();
-                return;
-            };
+
+            //if (!Regex.Match(txtFelhasznalo.Text, "^[A-Z][a - zA - Z]*$").Success)
+            //{
+            //    MessageBox.Show("A felhasználónév nem felel meg a feltételeknek!");
+            //    txtFelhasznalo.Focus();
+            //    return;
+            //};
+            //if (!Regex.Match(txtJelszo.Text, $"[a - zA - Z0-9]* $").Success)
+            //{
+            //    MessageBox.Show("A jelszó nem felel meg a feltételeknek!");
+            //    txtJelszo.Focus();
+            //    return;
+            //};
             CreateUser();
 
         }
@@ -103,9 +104,8 @@ namespace IRF_beadandó
 
         private void Szavazas()
         {
-
             user.Felhasználó = txtFelhasznalo.Text;
-            user.Jelszó = txtJelszo.Text;
+
             user.JelöltekFK = cmbJelolt.SelectedIndex + 1;
 
             userBindingSource.Add(user);
@@ -121,6 +121,22 @@ namespace IRF_beadandó
 
             return Regex.IsMatch(Jelszó, $"[a - zA - Z0-9]* $");
 
+        }
+
+        private void txtFelhasznalo_Validating(object sender, CancelEventArgs e)
+        {
+            if (!ValidateFelhasznalo(txtFelhasznalo.Text))
+                throw new ValidationException(
+                    "A felhasználónév nem megfelelő!");
+        }
+
+        private void txtJelszo_Validating(object sender, CancelEventArgs e)
+        {
+            if (!ValidateJelszo(txtJelszo.Text))
+            {
+                e.Cancel = true;
+                MessageBox.Show("A jelszó nem megfelelő");
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace IRF_beadandó.Entities
@@ -15,5 +16,6 @@ namespace IRF_beadandó.Entities
         public string Jelszó { get; set; }
 
         public int JelöltekFK { get; set; }
+
     }
 }

@@ -25,7 +25,7 @@ namespace UnitTest
         {
             var user = new User();
 
-            var actualResult = 
+            //var actualResult = 
 
             //Assert.AreEqual(exptedResult, actualResult);
 

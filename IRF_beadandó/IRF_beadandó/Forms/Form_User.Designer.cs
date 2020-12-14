@@ -51,6 +51,7 @@ namespace IRF_beadandó
             this.txtFelhasznalo.Name = "txtFelhasznalo";
             this.txtFelhasznalo.Size = new System.Drawing.Size(224, 50);
             this.txtFelhasznalo.TabIndex = 0;
+            this.txtFelhasznalo.Validating += new System.ComponentModel.CancelEventHandler(this.txtFelhasznalo_Validating);
             // 
             // txtJelszo
             // 
@@ -60,6 +61,7 @@ namespace IRF_beadandó
             this.txtJelszo.Name = "txtJelszo";
             this.txtJelszo.Size = new System.Drawing.Size(224, 51);
             this.txtJelszo.TabIndex = 0;
+            this.txtJelszo.Validating += new System.ComponentModel.CancelEventHandler(this.txtJelszo_Validating);
             // 
             // lblNev
             // 
