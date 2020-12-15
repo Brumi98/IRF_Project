@@ -23,11 +23,12 @@ namespace UnitTest
 
         public void TestValidateJelszo(string jelszo, bool exptedResult)
         {
-            var user = new User();
+            
+            IRF_beadandó.Form_User fu = new IRF_beadandó.Form_User();
 
-            //var actualResult = 
+            var actualResult = fu.ValidateJelszo(jelszo);
 
-            //Assert.AreEqual(exptedResult, actualResult);
+            Assert.AreEqual(exptedResult, actualResult);
 
 
         }
