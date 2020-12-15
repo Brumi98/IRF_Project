@@ -45,23 +45,23 @@ namespace IRF_beadandó
             // 
             // txtFelhasznalo
             // 
+            this.txtFelhasznalo.CausesValidation = false;
             this.txtFelhasznalo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.txtFelhasznalo.Location = new System.Drawing.Point(379, 177);
             this.txtFelhasznalo.Multiline = true;
             this.txtFelhasznalo.Name = "txtFelhasznalo";
             this.txtFelhasznalo.Size = new System.Drawing.Size(224, 50);
             this.txtFelhasznalo.TabIndex = 0;
-            this.txtFelhasznalo.Validating += new System.ComponentModel.CancelEventHandler(this.txtFelhasznalo_Validating);
             // 
             // txtJelszo
             // 
+            this.txtJelszo.CausesValidation = false;
             this.txtJelszo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.txtJelszo.Location = new System.Drawing.Point(379, 284);
             this.txtJelszo.Multiline = true;
             this.txtJelszo.Name = "txtJelszo";
             this.txtJelszo.Size = new System.Drawing.Size(224, 51);
             this.txtJelszo.TabIndex = 0;
-            this.txtJelszo.Validating += new System.ComponentModel.CancelEventHandler(this.txtJelszo_Validating);
             // 
             // lblNev
             // 

@@ -43,21 +43,10 @@ namespace IRF_beadandó
 
         private void CreateUser()
         {
-            if (txtFelhasznalo.Text != "" && txtJelszo.Text != "")
+            if (ValidateFelhasznalo(txtFelhasznalo.Text) == true && ValidateJelszo(txtJelszo.Text) == true)
             {
 
                 Szavazas();
-
-                if (!ValidateFelhasznalo(txtFelhasznalo.Text))
-                {
-                    MessageBox.Show("Nem megfelelő felhasználónév!");
-                }
-
-                if (!ValidateJelszo(txtJelszo.Text))
-                {
-                    MessageBox.Show("A jelszó nem megfelelő");
-                }
-
 
                 try
                 {
@@ -83,6 +72,7 @@ namespace IRF_beadandó
 
         private void Szavazas()
         {
+
             user.Felhasználó = txtFelhasznalo.Text;
 
             user.JelöltekFK = cmbJelolt.SelectedIndex + 1;
@@ -90,33 +80,45 @@ namespace IRF_beadandó
             userBindingSource.Add(user);
 
         }
-        public bool ValidateFelhasznalo(string Felhasználó)
+        public bool ValidateFelhasznalo(string felhasznalo)
         {
-            return Regex.IsMatch(txtFelhasznalo.Text, "^[A-Z][a - zA - Z]* $");
+            return Regex.IsMatch(felhasznalo, "^[A-ZÁÉÚŐÓÜÖÍ][a-záéúőóüöí]*$");
         }
 
         public bool ValidateJelszo(string jelszo)
         {
-
-            return Regex.IsMatch(txtJelszo.Text, $"[a - zA - Z0-9]* $");
+           
+            return Regex.IsMatch(jelszo, "^[A-Z]|[a-z]|[0-9]*$");
 
         }
 
-        public void txtFelhasznalo_Validating(object sender, CancelEventArgs e)
-        {
-            if (!ValidateFelhasznalo(txtFelhasznalo.Text))
-            {
-                MessageBox.Show("Nem megfelelő felhasználónév!");
-            }
-                
-        }
+        //public void txtFelhasznalo_Validating(object sender, CancelEventArgs e)
+        //{
+        //    Regex regex = new Regex("^[A-ZÁÉÚŐÓÜÖÍ][a-záéúőóüöí]*$");
 
-        public void txtJelszo_Validating(object sender, CancelEventArgs e)
-        {
-            if (!ValidateJelszo(txtJelszo.Text))
-            {
-                MessageBox.Show("A jelszó nem megfelelő");
-            }
-        }
+        //    if (regex.IsMatch(txtFelhasznalo.Text))
+        //    {
+        //        return;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Nem megfelelő felhasználónév!");
+        //    }
+
+        //}
+
+        //public void txtJelszo_Validating(object sender, CancelEventArgs e)
+        //{
+        //    Regex regex = new Regex("(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{0,}$");
+
+        //    if (regex.IsMatch(txtJelszo.Text))
+        //    {
+        //        return;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Nem megfelelő Jelszó!");
+        //    }
+        //}
     }
 }
