@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.Entity;
-using System.Text.RegularExpressions;
-using System.ComponentModel.DataAnnotations;
-using IRF_beadandó.Entities;
-using IRF_beadandó.Forms;
 
-namespace IRF_beadandó
+namespace IRF_beadandó.Forms
 {
     public partial class Form_User : Form
     {
@@ -31,13 +28,15 @@ namespace IRF_beadandó
 
             userBindingSource.DataSource = context.Users.Local;
             canditeBindingSource.DataSource = context.Candites.Local;
-
         }
-
-        private void btnSzavazas_Click(object sender, EventArgs e)
+        private void Szavazas()
         {
 
-            CreateUser();
+            user.Felhasználó = txtFelhasznalo.Text;
+
+            user.JelöltekFK = cmbJelolt.SelectedIndex + 1;
+
+            userBindingSource.Add(user);
 
         }
 
@@ -89,29 +88,23 @@ namespace IRF_beadandó
             return;
         }
 
-        private void Szavazas()
-        {
-
-            user.Felhasználó = txtFelhasznalo.Text;
-
-            user.JelöltekFK = cmbJelolt.SelectedIndex + 1;
-
-            userBindingSource.Add(user);
-
-        }
         public bool Felhasznaloellenorzes(string felhasznalo)
         {
 
-                return Regex.IsMatch(felhasznalo, "^[A-ZÁÉÚŐÓÜÖÍ][a-záéúőóüöí]*$");
+            return Regex.IsMatch(felhasznalo, "^[A-ZÁÉÚŐÓÜÖÍ][a-záéúőóüöí]*$");
 
         }
 
         public bool Jelszoellenorzes(string jelszo)
         {
-           
+
             return Regex.IsMatch(jelszo, "(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{0,}$");
 
         }
 
+        private void btnSzavazas_Click(object sender, EventArgs e)
+        {
+            CreateUser();
+        }
     }
 }

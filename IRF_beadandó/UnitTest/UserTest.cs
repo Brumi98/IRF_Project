@@ -17,7 +17,7 @@ namespace UnitTest
         ]
         public void TestValidateJelszo(string jelszo,bool expectedResult)
         {
-            IRF_beadandó.Form_User fu = new IRF_beadandó.Form_User();
+            IRF_beadandó.Forms.Form_User fu = new IRF_beadandó.Forms.Form_User();
 
             var actualResult = fu.Jelszoellenorzes(jelszo);
 
