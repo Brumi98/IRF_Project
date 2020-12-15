@@ -57,7 +57,7 @@ namespace IRF_beadandó
         {
 
 
-            //if (!Regex.Match(txtFelhasznalo.Text, "^[A-Z][a - zA - Z]*$").Success)
+            //if (!Regex.Match(txtFelhasznalo.Text, "^[A-Z][a - zA - Z]").Success)
             //{
             //    MessageBox.Show("A felhasználónév nem felel meg a feltételeknek!");
             //    txtFelhasznalo.Focus();
