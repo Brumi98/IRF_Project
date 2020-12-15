@@ -43,8 +43,27 @@ namespace IRF_beadandó
 
         private void CreateUser()
         {
-            if (ValidateFelhasznalo(txtFelhasznalo.Text) == true && ValidateJelszo(txtJelszo.Text) == true)
+            if (txtFelhasznalo.Text != "" && txtJelszo.Text != "")
             {
+                try
+                {
+                    Felhasznaloellenorzes(txtFelhasznalo.Text);
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+
+                try
+                {
+                    Jelszoellenorzes(txtJelszo.Text);
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
 
                 Szavazas();
 
@@ -80,45 +99,19 @@ namespace IRF_beadandó
             userBindingSource.Add(user);
 
         }
-        public bool ValidateFelhasznalo(string felhasznalo)
+        public bool Felhasznaloellenorzes(string felhasznalo)
         {
-            return Regex.IsMatch(felhasznalo, "^[A-ZÁÉÚŐÓÜÖÍ][a-záéúőóüöí]*$");
+
+                return Regex.IsMatch(felhasznalo, "^[A-ZÁÉÚŐÓÜÖÍ][a-záéúőóüöí]*$");
+
         }
 
-        public bool ValidateJelszo(string jelszo)
+        public bool Jelszoellenorzes(string jelszo)
         {
            
-            return Regex.IsMatch(jelszo, "^[A-Z]|[a-z]|[0-9]*$");
+            return Regex.IsMatch(jelszo, "(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{0,}$");
 
         }
 
-        //public void txtFelhasznalo_Validating(object sender, CancelEventArgs e)
-        //{
-        //    Regex regex = new Regex("^[A-ZÁÉÚŐÓÜÖÍ][a-záéúőóüöí]*$");
-
-        //    if (regex.IsMatch(txtFelhasznalo.Text))
-        //    {
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Nem megfelelő felhasználónév!");
-        //    }
-
-        //}
-
-        //public void txtJelszo_Validating(object sender, CancelEventArgs e)
-        //{
-        //    Regex regex = new Regex("(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{0,}$");
-
-        //    if (regex.IsMatch(txtJelszo.Text))
-        //    {
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Nem megfelelő Jelszó!");
-        //    }
-        //}
     }
 }

@@ -19,7 +19,7 @@ namespace UnitTest
         {
             IRF_beadandó.Form_User fu = new IRF_beadandó.Form_User();
 
-            var actualResult = fu.ValidateJelszo(jelszo);
+            var actualResult = fu.Jelszoellenorzes(jelszo);
 
             Assert.AreEqual(expectedResult, actualResult);
 
