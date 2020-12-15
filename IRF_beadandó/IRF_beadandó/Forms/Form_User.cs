@@ -19,10 +19,11 @@ namespace IRF_beadandó.Forms
         User user = new User();
 
 
-        public Form_User()
+        public Form_User(bool isTest = false)
         {
             InitializeComponent();
-
+            if (isTest)
+                return;
             context.Users.Load();
             context.Candites.Load();
 
@@ -33,8 +34,8 @@ namespace IRF_beadandó.Forms
         {
 
             user.Felhasználó = txtFelhasznalo.Text;
-
-            user.JelöltekFK = cmbJelolt.SelectedIndex + 1;
+            user.Jelszó = txtJelszo.Text;
+            user.JelöltekFK = (int)cmbJelolt.SelectedValue;
 
             userBindingSource.Add(user);
 

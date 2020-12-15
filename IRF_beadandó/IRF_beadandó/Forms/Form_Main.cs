@@ -58,9 +58,9 @@ namespace IRF_beadandó
                 MessageBox.Show("Ki kell tölteni az adatokat!");
             }
 
-            userDataGridView.Refresh();
+            
             GetVote();
-
+            userDataGridView.Refresh();
         }
 
         private void UserCreater()
@@ -80,6 +80,7 @@ namespace IRF_beadandó
             }
 
             userBindingSource.Add(szavazo);
+
 
         }
 

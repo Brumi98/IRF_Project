@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using IRF_beadandó.Forms;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace UnitTest
         ]
         public void TestValidateJelszo(string jelszo,bool expectedResult)
         {
-            IRF_beadandó.Forms.Form_User fu = new IRF_beadandó.Forms.Form_User();
+            Form_User fu = new Form_User(true);
 
             var actualResult = fu.Jelszoellenorzes(jelszo);
 
