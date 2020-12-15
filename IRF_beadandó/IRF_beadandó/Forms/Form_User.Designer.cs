@@ -34,10 +34,10 @@ namespace IRF_beadandó.Forms
             this.txtFelhasznalo = new System.Windows.Forms.TextBox();
             this.txtJelszo = new System.Windows.Forms.TextBox();
             this.cmbJelolt = new System.Windows.Forms.ComboBox();
+            this.canditeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblNev = new System.Windows.Forms.Label();
             this.lblJelszo = new System.Windows.Forms.Label();
             this.lblSzavazat = new System.Windows.Forms.Label();
-            this.canditeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.canditeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -78,6 +78,10 @@ namespace IRF_beadandó.Forms
             this.cmbJelolt.TabIndex = 2;
             this.cmbJelolt.ValueMember = "Candites_ID";
             // 
+            // canditeBindingSource
+            // 
+            this.canditeBindingSource.DataSource = typeof(IRF_beadandó.Candite);
+            // 
             // lblNev
             // 
             this.lblNev.AutoSize = true;
@@ -104,10 +108,6 @@ namespace IRF_beadandó.Forms
             this.lblSzavazat.Size = new System.Drawing.Size(51, 13);
             this.lblSzavazat.TabIndex = 3;
             this.lblSzavazat.Text = "Szavazat";
-            // 
-            // canditeBindingSource
-            // 
-            this.canditeBindingSource.DataSource = typeof(IRF_beadandó.Candite);
             // 
             // userBindingSource
             // 
