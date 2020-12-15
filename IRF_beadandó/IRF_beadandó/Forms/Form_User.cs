@@ -44,41 +44,36 @@ namespace IRF_beadandó.Forms
         {
             if (txtFelhasznalo.Text != "" && txtJelszo.Text != "")
             {
-                try
+                if (Felhasznaloellenorzes(txtFelhasznalo.Text) != true)
                 {
-                    Felhasznaloellenorzes(txtFelhasznalo.Text);
+                    MessageBox.Show("Helytelen Felhasználónév");
                 }
-                catch (Exception ex)
+                else
                 {
+                    if (Jelszoellenorzes(txtJelszo.Text) != true)
+                    {
+                        MessageBox.Show("Helytelen Jelszó!");
+                    }
+                    else
+                    {
 
-                    MessageBox.Show(ex.Message);
-                }
+                        Szavazas();
 
-                try
-                {
-                    Jelszoellenorzes(txtJelszo.Text);
-                }
-                catch (Exception ex)
-                {
+                        try
+                        {
+                            context.SaveChanges();
+                            MessageBox.Show("Köszönjük, hogy szavazott.");
+                            userBindingSource.EndEdit();
 
-                    MessageBox.Show(ex.Message);
-                }
+                            Application.Exit();
 
-                Szavazas();
+                        }
+                        catch (Exception ex)
+                        {
 
-                try
-                {
-                    context.SaveChanges();
-                    MessageBox.Show("Köszönjük, hogy szavazott.");
-                    userBindingSource.EndEdit();
-
-                    Application.Exit();
-
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.Message);
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
                 }
             }
             else
@@ -91,14 +86,14 @@ namespace IRF_beadandó.Forms
         public bool Felhasznaloellenorzes(string felhasznalo)
         {
 
-            return Regex.IsMatch(felhasznalo, "^[A-ZÁÉÚŐÓÜÖÍ][a-záéúőóüöí]*$");
+            return Regex.IsMatch(felhasznalo, @"^[A-ZÁÉÚŐÓÜÖÍ][a-záéúőóüöí]*$");
 
         }
 
         public bool Jelszoellenorzes(string jelszo)
         {
 
-            return Regex.IsMatch(jelszo, "(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{0,}$");
+            return Regex.IsMatch(jelszo, @"(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{0,}$");
 
         }
 
