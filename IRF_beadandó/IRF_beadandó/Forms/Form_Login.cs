@@ -14,7 +14,6 @@ namespace IRF_beadandó
 {
     public partial class Form_Login : Form
     {
-        DatabaseEntities_1 context = new DatabaseEntities_1();
         Main_User Gazda = new Main_User();
         
 
@@ -22,8 +21,8 @@ namespace IRF_beadandó
         {
             InitializeComponent();
             
-            Gazda.nev  = "";
-            Gazda.jelszo  = "";
+            Gazda.nev  = "admin";
+            Gazda.jelszo  = "Qwerty6789";
 
         }
 

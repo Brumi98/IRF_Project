@@ -68,6 +68,7 @@ namespace IRF_beadandó
             this.txtBoxCandite = new System.Windows.Forms.TextBox();
             this.checkBoxRandom = new System.Windows.Forms.CheckBox();
             this.btnKijelentkezés = new System.Windows.Forms.Button();
+            this.lblJeloltek_Lista = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingNavigator)).BeginInit();
             this.userBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -79,7 +80,7 @@ namespace IRF_beadandó
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(423, 95);
+            this.btnAdd.Location = new System.Drawing.Point(423, 98);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(118, 51);
             this.btnAdd.TabIndex = 10;
@@ -362,7 +363,7 @@ namespace IRF_beadandó
             // 
             // txtBoxCandite
             // 
-            this.txtBoxCandite.Location = new System.Drawing.Point(592, 50);
+            this.txtBoxCandite.Location = new System.Drawing.Point(592, 57);
             this.txtBoxCandite.Name = "txtBoxCandite";
             this.txtBoxCandite.Size = new System.Drawing.Size(184, 20);
             this.txtBoxCandite.TabIndex = 23;
@@ -389,12 +390,22 @@ namespace IRF_beadandó
             this.btnKijelentkezés.UseVisualStyleBackColor = true;
             this.btnKijelentkezés.Click += new System.EventHandler(this.btnKijelentkezés_Click);
             // 
+            // lblJeloltek_Lista
+            // 
+            this.lblJeloltek_Lista.AutoSize = true;
+            this.lblJeloltek_Lista.Location = new System.Drawing.Point(589, 34);
+            this.lblJeloltek_Lista.Name = "lblJeloltek_Lista";
+            this.lblJeloltek_Lista.Size = new System.Drawing.Size(68, 13);
+            this.lblJeloltek_Lista.TabIndex = 26;
+            this.lblJeloltek_Lista.Text = "Összes jelölt:";
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1134, 661);
+            this.Controls.Add(this.lblJeloltek_Lista);
             this.Controls.Add(this.btnKijelentkezés);
             this.Controls.Add(this.checkBoxRandom);
             this.Controls.Add(this.txtBoxCandite);
@@ -462,6 +473,7 @@ namespace IRF_beadandó
         private System.Windows.Forms.TextBox txtBoxCandite;
         private System.Windows.Forms.CheckBox checkBoxRandom;
         private System.Windows.Forms.Button btnKijelentkezés;
+        private System.Windows.Forms.Label lblJeloltek_Lista;
     }
 }
 
