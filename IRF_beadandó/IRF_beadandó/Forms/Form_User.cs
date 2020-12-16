@@ -30,16 +30,8 @@ namespace IRF_beadandó.Forms
             userBindingSource.DataSource = context.Users.Local;
             canditeBindingSource.DataSource = context.Candites.Local;
         }
-        private void Szavazas()
-        {
 
-            user.Felhasználó = txtFelhasznalo.Text;
-            user.Jelszó = txtJelszo.Text;
-            user.JelöltekFK = (int)cmbJelolt.SelectedValue;
-
-            userBindingSource.Add(user);
-
-        }
+        //Szavazáshoz
 
         private void CreateUser()
         {
@@ -84,6 +76,19 @@ namespace IRF_beadandó.Forms
             return;
         }
 
+        private void Szavazas()
+        {
+
+            user.Felhasználó = txtFelhasznalo.Text;
+            user.Jelszó = txtJelszo.Text;
+            user.JelöltekFK = (int)cmbJelolt.SelectedValue;
+
+            userBindingSource.Add(user);
+
+        }
+
+        //Regex
+
         public bool Felhasznaloellenorzes(string felhasznalo)
         {
 
@@ -98,6 +103,8 @@ namespace IRF_beadandó.Forms
 
         }
 
+        //Gombok eseményei
+
         private void btnSzavazas_Click(object sender, EventArgs e)
         {
             CreateUser();
@@ -109,6 +116,8 @@ namespace IRF_beadandó.Forms
             Form_Elso fe = new Form_Elso();
             fe.Show();
         }
+
+        //Információs ikon eseményei
 
         private void pictureBox_Felhasznalo_MouseEnter(object sender, EventArgs e)
         {

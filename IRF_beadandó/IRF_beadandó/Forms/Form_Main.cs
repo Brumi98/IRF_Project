@@ -34,6 +34,31 @@ namespace IRF_beadandó
 
         }
 
+        //szavazó függvény
+
+        private void UserCreater()
+        {
+
+            string szam = listBoxCandite.Items.Count.ToString();
+
+            szavazo.Felhasználó = txtFelhasználó.Text;
+            szavazo.Jelszó = txtJelszo.Text;
+            if (cmbJelolt.Enabled == true)
+            {
+                szavazo.JelöltekFK = (int)cmbJelolt.SelectedValue;
+            }
+            else
+            {
+                szavazo.JelöltekFK = rnd.Next(1, Convert.ToInt32(szam));
+            }
+
+            userBindingSource.Add(szavazo);
+
+
+        }
+
+        //gombok eseményei
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
@@ -63,27 +88,6 @@ namespace IRF_beadandó
             userDataGridView.Refresh();
         }
 
-        private void UserCreater()
-        {
-
-            string szam = listBoxCandite.Items.Count.ToString();
-
-            szavazo.Felhasználó = txtFelhasználó.Text;
-            szavazo.Jelszó = txtJelszo.Text;
-            if (cmbJelolt.Enabled == true)
-            {
-                szavazo.JelöltekFK = (int)cmbJelolt.SelectedValue;
-            }
-            else
-            {
-                szavazo.JelöltekFK = rnd.Next(1,Convert.ToInt32(szam));
-            }
-
-            userBindingSource.Add(szavazo);
-
-
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int rowIndex = userDataGridView.CurrentCell.RowIndex;
@@ -100,6 +104,35 @@ namespace IRF_beadandó
             }
             userDataGridView.Refresh();
         }
+
+        private void btnKijelentkezés_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form_Login fm = new Form_Login();
+            fm.Show();
+        }
+
+        //textchange események
+
+        private void txtBoxCandite_TextChanged(object sender, EventArgs e)
+        {
+            GetJelolt();
+        }
+
+        private void checkBoxRandom_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (checkBoxRandom.Checked != true)
+            {
+                 cmbJelolt.Enabled = true;
+            }
+            else
+            {
+                cmbJelolt.Enabled = false;
+            }
+
+        }
+
+        //Linq lekérdezések
 
         private void GetJelolt()
         {
@@ -134,29 +167,5 @@ namespace IRF_beadandó
             chartSzavazas.DataBind();
         }
 
-        private void txtBoxCandite_TextChanged(object sender, EventArgs e)
-        {
-            GetJelolt();
-        }
-
-        private void checkBoxRandom_CheckStateChanged(object sender, EventArgs e)
-        {
-            if (checkBoxRandom.Checked != true)
-            {
-                 cmbJelolt.Enabled = true;
-            }
-            else
-            {
-                cmbJelolt.Enabled = false;
-            }
-
-        }
-
-        private void btnKijelentkezés_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            Form_Login fm = new Form_Login();
-            fm.Show();
-        }
     }
 }

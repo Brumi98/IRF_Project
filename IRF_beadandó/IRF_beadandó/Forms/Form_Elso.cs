@@ -19,6 +19,8 @@ namespace IRF_beadandó.Forms
 
         }
 
+        //gombok eseményei
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             
@@ -26,15 +28,6 @@ namespace IRF_beadandó.Forms
             Form_Login fl = new Form_Login();
 
             DialogResult result = fl.ShowDialog();
-
-            
-        }
-
-        private void HideForm()
-        {
-
-            this.Hide();
-
 
         }
 
@@ -47,5 +40,14 @@ namespace IRF_beadandó.Forms
             DialogResult result = fu.ShowDialog();
 
         }
+
+        //függvények
+
+        private void HideForm()
+        {
+            this.Hide();
+        }
+
+
     }
 }

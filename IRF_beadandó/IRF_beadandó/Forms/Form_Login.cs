@@ -26,6 +26,8 @@ namespace IRF_beadandó
 
         }
 
+        //gomb események
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text == Gazda.nev  & txtPassword.Text == Gazda.jelszo)
