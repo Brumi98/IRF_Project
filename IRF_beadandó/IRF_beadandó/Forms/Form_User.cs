@@ -109,5 +109,26 @@ namespace IRF_beadandó.Forms
             Form_Elso fe = new Form_Elso();
             fe.Show();
         }
+
+        private void pictureBox_Felhasznalo_MouseEnter(object sender, EventArgs e)
+        {
+            lblFelhasznalo_Info.Visible = true;
+        }
+
+        private void pictureBox_Felhasznalo_MouseLeave(object sender, EventArgs e)
+        {
+            lblFelhasznalo_Info.Visible = false;
+        }
+
+        private void pictureBox_Jelszo_MouseEnter(object sender, EventArgs e)
+        {
+            lblJelszo_Info.Visible = true;
+        }
+
+        private void pictureBox_Jelszo_MouseLeave(object sender, EventArgs e)
+        {
+            lblJelszo_Info.Visible = false;
+        }
+
     }
 }
