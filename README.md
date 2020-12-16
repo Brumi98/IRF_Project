@@ -15,3 +15,10 @@ A szavazás eredményeit diagramok formájában tudnánk bemutatni, amit a progr
 
 Lenne benne egy véletlen szám generálás, amivel véletlenszámú szavazatott lehet hozzáadni a programhoz tesztelés céljából.
 
+Bővítés:
+
+Végül két irányba lehet indulni a program indításakor, vagy bejelentkezünk, mint rendszergazda vagy szavazunk. Ha szavazunk kapunk egy felületet, ahol beírhatjuk a nevünket, kódunkat és egy combobox-ból kiválasztjuk, hogy kire szavazunk. 
+
+A háttérben itt fut le a egy regex, amiről a Unit test írodott.
+
+A loginnél a felhasználónév: admin a jelszó: Qwerty6789, a többi funkció maradt a fenntebb megírt formában.
