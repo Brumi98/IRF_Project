@@ -39,13 +39,14 @@ namespace IRF_beadandó.Forms
             this.lblJelszo = new System.Windows.Forms.Label();
             this.lblSzavazat = new System.Windows.Forms.Label();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnKijelentkezes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.canditeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSzavazas
             // 
-            this.btnSzavazas.Location = new System.Drawing.Point(695, 350);
+            this.btnSzavazas.Location = new System.Drawing.Point(701, 279);
             this.btnSzavazas.Name = "btnSzavazas";
             this.btnSzavazas.Size = new System.Drawing.Size(263, 184);
             this.btnSzavazas.TabIndex = 0;
@@ -55,14 +56,14 @@ namespace IRF_beadandó.Forms
             // 
             // txtFelhasznalo
             // 
-            this.txtFelhasznalo.Location = new System.Drawing.Point(319, 224);
+            this.txtFelhasznalo.Location = new System.Drawing.Point(272, 265);
             this.txtFelhasznalo.Name = "txtFelhasznalo";
             this.txtFelhasznalo.Size = new System.Drawing.Size(100, 20);
             this.txtFelhasznalo.TabIndex = 1;
             // 
             // txtJelszo
             // 
-            this.txtJelszo.Location = new System.Drawing.Point(319, 317);
+            this.txtJelszo.Location = new System.Drawing.Point(272, 355);
             this.txtJelszo.Name = "txtJelszo";
             this.txtJelszo.Size = new System.Drawing.Size(100, 20);
             this.txtJelszo.TabIndex = 1;
@@ -72,7 +73,7 @@ namespace IRF_beadandó.Forms
             this.cmbJelolt.DataSource = this.canditeBindingSource;
             this.cmbJelolt.DisplayMember = "Jelöltek";
             this.cmbJelolt.FormattingEnabled = true;
-            this.cmbJelolt.Location = new System.Drawing.Point(319, 403);
+            this.cmbJelolt.Location = new System.Drawing.Point(272, 442);
             this.cmbJelolt.Name = "cmbJelolt";
             this.cmbJelolt.Size = new System.Drawing.Size(121, 21);
             this.cmbJelolt.TabIndex = 2;
@@ -85,33 +86,46 @@ namespace IRF_beadandó.Forms
             // lblNev
             // 
             this.lblNev.AutoSize = true;
-            this.lblNev.Location = new System.Drawing.Point(186, 227);
+            this.lblNev.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblNev.Location = new System.Drawing.Point(139, 260);
             this.lblNev.Name = "lblNev";
-            this.lblNev.Size = new System.Drawing.Size(27, 13);
+            this.lblNev.Size = new System.Drawing.Size(53, 24);
             this.lblNev.TabIndex = 3;
-            this.lblNev.Text = "Név";
+            this.lblNev.Text = "Név:";
             // 
             // lblJelszo
             // 
             this.lblJelszo.AutoSize = true;
-            this.lblJelszo.Location = new System.Drawing.Point(186, 317);
+            this.lblJelszo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblJelszo.Location = new System.Drawing.Point(139, 350);
             this.lblJelszo.Name = "lblJelszo";
-            this.lblJelszo.Size = new System.Drawing.Size(36, 13);
+            this.lblJelszo.Size = new System.Drawing.Size(75, 24);
             this.lblJelszo.TabIndex = 3;
-            this.lblJelszo.Text = "Jelszó";
+            this.lblJelszo.Text = "Jelszó:";
             // 
             // lblSzavazat
             // 
             this.lblSzavazat.AutoSize = true;
-            this.lblSzavazat.Location = new System.Drawing.Point(186, 406);
+            this.lblSzavazat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblSzavazat.Location = new System.Drawing.Point(139, 439);
             this.lblSzavazat.Name = "lblSzavazat";
-            this.lblSzavazat.Size = new System.Drawing.Size(51, 13);
+            this.lblSzavazat.Size = new System.Drawing.Size(97, 24);
             this.lblSzavazat.TabIndex = 3;
-            this.lblSzavazat.Text = "Szavazat";
+            this.lblSzavazat.Text = "Szavazat:";
             // 
             // userBindingSource
             // 
             this.userBindingSource.DataSource = typeof(IRF_beadandó.User);
+            // 
+            // btnKijelentkezes
+            // 
+            this.btnKijelentkezes.Location = new System.Drawing.Point(1025, 12);
+            this.btnKijelentkezes.Name = "btnKijelentkezes";
+            this.btnKijelentkezes.Size = new System.Drawing.Size(97, 47);
+            this.btnKijelentkezes.TabIndex = 4;
+            this.btnKijelentkezes.Text = "Kijelentkezés";
+            this.btnKijelentkezes.UseVisualStyleBackColor = true;
+            this.btnKijelentkezes.Click += new System.EventHandler(this.btnKijelentkezes_Click);
             // 
             // Form_User
             // 
@@ -119,6 +133,7 @@ namespace IRF_beadandó.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1134, 661);
+            this.Controls.Add(this.btnKijelentkezes);
             this.Controls.Add(this.lblSzavazat);
             this.Controls.Add(this.lblJelszo);
             this.Controls.Add(this.lblNev);
@@ -148,5 +163,6 @@ namespace IRF_beadandó.Forms
         private System.Windows.Forms.Label lblSzavazat;
         private System.Windows.Forms.BindingSource canditeBindingSource;
         private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.Button btnKijelentkezes;
     }
 }

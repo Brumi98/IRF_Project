@@ -31,10 +31,10 @@ namespace IRF_beadandó
         {
             if (txtUsername.Text == Gazda.nev  & txtPassword.Text == Gazda.jelszo)
             {
-                
-                Form_Main fm = new Form_Main();
 
-                DialogResult result = fm.ShowDialog();
+                this.Close();
+                Form_Main fm = new Form_Main();
+                fm.Show();
 
             }
             else

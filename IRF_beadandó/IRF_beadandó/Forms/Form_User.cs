@@ -102,5 +102,12 @@ namespace IRF_beadandó.Forms
         {
             CreateUser();
         }
+
+        private void btnKijelentkezes_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form_Elso fe = new Form_Elso();
+            fe.Show();
+        }
     }
 }

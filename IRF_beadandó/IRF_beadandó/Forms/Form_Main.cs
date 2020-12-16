@@ -72,7 +72,7 @@ namespace IRF_beadandó
             szavazo.Jelszó = txtJelszo.Text;
             if (cmbJelolt.Enabled == true)
             {
-                szavazo.JelöltekFK = cmbJelolt.SelectedIndex + 1;
+                szavazo.JelöltekFK = (int)cmbJelolt.SelectedValue;
             }
             else
             {
@@ -150,6 +150,13 @@ namespace IRF_beadandó
                 cmbJelolt.Enabled = false;
             }
 
+        }
+
+        private void btnKijelentkezés_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form_Login fm = new Form_Login();
+            fm.Show();
         }
     }
 }

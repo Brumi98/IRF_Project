@@ -67,6 +67,7 @@ namespace IRF_beadandó
             this.listBoxCandite = new System.Windows.Forms.ListBox();
             this.txtBoxCandite = new System.Windows.Forms.TextBox();
             this.checkBoxRandom = new System.Windows.Forms.CheckBox();
+            this.btnKijelentkezés = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingNavigator)).BeginInit();
             this.userBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -317,17 +318,23 @@ namespace IRF_beadandó
             // 
             // chartSzavazas
             // 
+            this.chartSzavazas.BorderlineWidth = 2;
             chartArea1.Name = "ChartArea1";
             this.chartSzavazas.ChartAreas.Add(chartArea1);
             this.chartSzavazas.DataSource = this.canditeBindingSource;
+            legend1.Enabled = false;
             legend1.Name = "Legend1";
             this.chartSzavazas.Legends.Add(legend1);
             this.chartSzavazas.Location = new System.Drawing.Point(592, 243);
             this.chartSzavazas.Name = "chartSzavazas";
+            series1.BorderWidth = 2;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            series1.IsXValueIndexed = true;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
             series1.XValueMember = "Jelöltek";
             series1.YValueMembers = "Candites_ID";
             this.chartSzavazas.Series.Add(series1);
@@ -372,11 +379,23 @@ namespace IRF_beadandó
             this.checkBoxRandom.UseVisualStyleBackColor = true;
             this.checkBoxRandom.CheckStateChanged += new System.EventHandler(this.checkBoxRandom_CheckStateChanged);
             // 
+            // btnKijelentkezés
+            // 
+            this.btnKijelentkezés.Location = new System.Drawing.Point(1027, 12);
+            this.btnKijelentkezés.Name = "btnKijelentkezés";
+            this.btnKijelentkezés.Size = new System.Drawing.Size(95, 42);
+            this.btnKijelentkezés.TabIndex = 25;
+            this.btnKijelentkezés.Text = "Kijelentkezés";
+            this.btnKijelentkezés.UseVisualStyleBackColor = true;
+            this.btnKijelentkezés.Click += new System.EventHandler(this.btnKijelentkezés_Click);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1134, 661);
+            this.Controls.Add(this.btnKijelentkezés);
             this.Controls.Add(this.checkBoxRandom);
             this.Controls.Add(this.txtBoxCandite);
             this.Controls.Add(this.listBoxCandite);
@@ -442,6 +461,7 @@ namespace IRF_beadandó
         private System.Windows.Forms.ListBox listBoxCandite;
         private System.Windows.Forms.TextBox txtBoxCandite;
         private System.Windows.Forms.CheckBox checkBoxRandom;
+        private System.Windows.Forms.Button btnKijelentkezés;
     }
 }
 
